@@ -1,0 +1,63 @@
+$header-img: image-url("assets/images/login.jpg", false, false);
+
+input {
+  border: 1px solid #dfdfdf;
+  padding: 8px;
+  box-sizing: border-box;
+  height: 45px;
+  border-radius: 2px;
+}
+
+label {
+  font-size: 14px !important;
+  font-weight: 200;
+  left: 15px;
+  top: 14px;
+}
+
+.left {
+  background: url("http://rn53themes.net/themes/demo/the-royal-hotel/images/login.jpg")
+    no-repeat center center;
+  // background-image: $header-img;
+  padding: 11% 6%;
+  color: #fff;
+  height: 100%;
+  h1 {
+    color: #fff;
+    font-size: 32px;
+  }
+  p {
+    color: #fff;
+  }
+  h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #c07882;
+    padding-top: 15px;
+  }
+  ul {
+    margin-bottom: 0px;
+    li {
+      margin-bottom: 5px;
+      a {
+        display: block;
+        background: #3f51b5;
+        color: #fff;
+        padding: 12px;
+        border-radius: 2px;
+        font-family: "Quicksand", sans-serif;
+      }
+    }
+    li:nth-child(2) {
+      a {
+        background: #f24033;
+      }
+    }
+    li:nth-child(3) {
+      a {
+        background: #24a9e6;
+      }
+    }
+  }
+}

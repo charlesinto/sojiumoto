@@ -1,0 +1,133 @@
+<section style="min-height: 100vh">
+  <div class="db-cent-3">
+    <div class="db-cent-table db-com-table">
+      <div class="db-title">
+        <h3>Create User</h3>
+      </div>
+      <form
+        (ngSubmit)="createUser($event)"
+        [formGroup]="createUserForm"
+        class="s12"
+      >
+        <div class="row">
+          <div class="col-md-6">
+            <div class="input-field s12">
+              <input
+                autocomplete="disabled"
+                type="text"
+                name="firstName"
+                class="validate"
+                formControlName="firstName"
+                id="firstName"
+              />
+              <label for="DiscountedPrice" class="active">First Name</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-field s12">
+              <input
+                type="text"
+                name="lastName"
+                class="validate"
+                id="lastName"
+                formControlName="lastName"
+              />
+              <label for="lastName" class="active">Last Name</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-field s12">
+              <input
+                type="email"
+                name="email"
+                formControlName="email"
+                class="validate"
+                id="email"
+              />
+              <label for="email" class="active">Email Address</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-field s12">
+              <input
+                type="text"
+                formControlName="phoneNumber"
+                name="phoneNumber"
+                class="validate"
+                id="phoneNumber"
+              />
+              <label for="phoneNumber" class="active">Phone Number</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-field s12">
+              <input
+                autocomplete="disabled"
+                type="password"
+                name="password"
+                formControlName="password"
+                class="validate"
+                id="password"
+              />
+              <label for="password" class="active">Password</label>
+            </div>
+          </div>
+          <div class="input-field col-md-6">
+            <select
+              id="role"
+              class="browser-default"
+              name="role"
+              formControlName="role"
+            >
+              <option value="" disabled selected>Choose Role</option>
+              <option value="FRONT DESK OFFICER">FRONT DESK OFFICER</option>
+              <option value="MANAGER">MANAGER</option>
+            </select>
+            <!-- <label>Materialize Select</label> -->
+          </div>
+        </div>
+        <div>
+          <div class="input-field s4">
+            <input
+              type="submit"
+              value="Create"
+              (click)="createUser($event)"
+              class="waves-effect waves-light log-in-btn"
+            />
+          </div>
+        </div>
+      </form>
+
+      <div style="margin-top: 20px; margin-bottom: 20px"></div>
+
+      <div class="db-title">
+        <h3>Users</h3>
+      </div>
+
+      <table class="bordered responsive-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of users">
+            <td>{{ item.id }}</td>
+            <td>{{ item.firstName }}</td>
+            <td>{{ item.lastName }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.phoneNumber }}</td>
+            <td>
+              <a href="#" class="db-success">{{ item.role }}</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

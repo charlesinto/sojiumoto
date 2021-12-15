@@ -1,0 +1,133 @@
+<!-- <div class="log-in-pop">
+  <div class="">
+    <h1>Hello... <span>Charles</span></h1>
+    <p>
+      Don't have an account? Create your account. It's take less then a minutes
+    </p>
+    <h4>Login with social media</h4>
+    <ul>
+      <li>
+        <a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-google"></i> Google+</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+      </li>
+    </ul>
+  </div>
+  <div class="">
+    <a href="#" class="pop-close" data-dismiss="modal"
+      ><img src="./assets/images/cancel.png" alt="" />
+    </a>
+
+  </div>
+</div> -->
+
+<section class="container-fluid" style="padding-top: 72px; height: 100vh">
+  <div class="row" style="height: 100%">
+    <div class="col-md-6" style="height: 100%; padding-left: 0px">
+      <div class="left">
+        <p>
+          Don't have an account? Create your account. It's take less then a
+          minutes
+        </p>
+        <h4>Login with social media</h4>
+        <ul style="width: 50%">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-google"></i> Google+</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 p-0" style="height: 100%; padding-top: 30px">
+      <h4>Login</h4>
+      <p>
+        Don't have an account? Create your account. It's take less then a
+        minutes
+      </p>
+      <form
+        (ngSubmit)="login($event)"
+        [formGroup]="loginForm"
+        autocomplete="off"
+        class="s12"
+      >
+        <input
+          autocomplete="false"
+          name="hidden"
+          type="text"
+          formControlName="email"
+          style="display: none"
+        />
+        <div>
+          <div class="input-field s12">
+            <input
+              name="email"
+              type="text"
+              formControlName="email"
+              data-ng-model="name"
+              class="validate"
+              autocomplete="disabled"
+            />
+            <label for="username" class="active">Email</label>
+          </div>
+        </div>
+        <div>
+          <div class="input-field s12">
+            <input
+              autocomplete="disabled"
+              name="password"
+              type="password"
+              formControlName="password"
+              class="validate"
+            />
+            <label for="password" class="active">Password</label>
+          </div>
+        </div>
+        <div>
+          <div class="s12 log-ch-bx">
+            <p>
+              <input type="checkbox" id="test5" />
+              <label for="test5">Remember me</label>
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="input-field s4">
+            <input
+              type="submit"
+              value="Login"
+              class="waves-effect waves-light log-in-btn"
+            />
+          </div>
+        </div>
+        <div>
+          <div class="input-field s12">
+            <a
+              href="#"
+              data-dismiss="modal"
+              data-toggle="modal"
+              data-target="#modal3"
+              >Forgot password</a
+            >
+            |
+            <a
+              href="#"
+              data-dismiss="modal"
+              data-toggle="modal"
+              data-target="#modal2"
+              >Create a new account</a
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

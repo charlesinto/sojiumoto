@@ -1,0 +1,76 @@
+<div class="inn-body-section pad-bot-55" style="padding-top: 140px">
+  <div class="container">
+    <div class="row">
+      <div class="page-head">
+        <h2>Suite Types</h2>
+        <div class="head-title">
+          <div class="hl-1"></div>
+          <div class="hl-2"></div>
+          <div class="hl-3"></div>
+        </div>
+        <p>Number 1 Africa finest luxury apartments @sujimoto</p>
+      </div>
+
+      <!--END ROOM SECTION-->
+      <!--ROOM SECTION-->
+      <div *ngFor="let item of data" class="room">
+        <!--<div class="ribbon ribbon-top-left"><span>Featured</span></div>-->
+        <!--ROOM IMAGE-->
+        <div class="r1 r-com">
+          <img src="{{ item.thumbNailUrl }}" alt="" />
+        </div>
+        <!--ROOM RATING-->
+        <div class="r2 r-com">
+          <h4>{{ item.name }}</h4>
+          <div class="r2-ratt">
+            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+            <img src="./assets/images/h-trip.png" alt="" />
+            <span>Excellent 3.5 / 5</span>
+          </div>
+          <ul>
+            <li>Max Adult : 4</li>
+            <li>Max Child : 4</li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <!--ROOM AMINITIES-->
+        <div class="r3 r-com">
+          <ul>
+            <li *ngFor="let detail of item.info">{{ detail }}</li>
+          </ul>
+        </div>
+        <!--ROOM PRICE-->
+        <div class="r4 r-com">
+          <!-- <p>Price for 1 Year</p> -->
+          <p>
+            <span class="room-price-1">&#8358; {{ item.price | number }}</span>
+            <span class="room-price">&#8358;: 0</span>
+          </p>
+          <!-- <p>Non Refundable</p> -->
+        </div>
+        <!--ROOM BOOKING BUTTON-->
+        <div class="r5 r-com">
+          <div
+            [ngClass]="{ unavailable: !item.available }"
+            class="r2-available"
+          >
+            {{ !item.available ? "Not Available" : "Available" }}
+          </div>
+          <!-- <p>Price Per Night</p> -->
+          <a
+            [routerLink]="['/suit-detail', item.id]"
+            routerLinkActive="router-link-active"
+            class="inn-room-book"
+            >Buy</a
+          >
+        </div>
+      </div>
+      <!--END ROOM SECTION-->
+    </div>
+  </div>
+</div>
+<!--TOP SECTION-->
+<!--TOP SECTION-->

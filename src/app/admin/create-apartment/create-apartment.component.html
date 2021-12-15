@@ -1,0 +1,188 @@
+<section style="min-height: 100vh">
+  <div class="db-cent-3">
+    <div class="db-cent-table db-com-table">
+      <div class="db-title">
+        <h3>Upload Suite</h3>
+      </div>
+      <div class="inn-com-form">
+        <form (ngSubmit)="saveApartment()" [formGroup]="uploadForm">
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-field s12">
+                  <input
+                    autocomplete="disabled"
+                    type="text"
+                    name="Name"
+                    class="validate"
+                    id="name"
+                    formControlName="name"
+                  />
+                  <label for="name" class="active">Name</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-field s12">
+                  <input
+                    autocomplete="disabled"
+                    type="number"
+                    name="Price"
+                    class="validate"
+                    id="price"
+                    formControlName="price"
+                  />
+                  <label for="price" class="active">Price</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-field s12">
+                  <input
+                    autocomplete="disabled"
+                    type="number"
+                    name="DiscountedPrice"
+                    class="validate"
+                    id="DiscountedPrice"
+                    formControlName="discountedPrice"
+                  />
+                  <label for="DiscountedPrice" class="active"
+                    >Discounted Price</label
+                  >
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-field">
+                  <select
+                    id="apartmentState"
+                    name="state"
+                    formControlName="state"
+                    class="select-dropdown browser-default"
+                  >
+                    <option value="" disabled selected>Choose State</option>
+                    <option *ngFor="let item of states" value="{{ item }}">
+                      {{ item }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-field s12">
+                  <textarea
+                    id="shortDescription"
+                    class="materialize-textarea"
+                    formControlName="shortDescription"
+                  ></textarea>
+                  <label for="shortDescription">Short Description</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="input-field s12">
+                  <textarea
+                    id="longDescription"
+                    class="materialize-textarea"
+                    formControlName="longDescription"
+                  ></textarea>
+                  <label for="longDescription">Long Description</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span style="line-height: 1.42857143" class="file-upload-btn"
+                  >Browse</span
+                >
+                <input
+                  (change)="onFileChange($event)"
+                  accept="image/*"
+                  type="file"
+                  multiple
+                />
+              </div>
+
+              <div class="file-path-wrapper">
+                <input
+                  class="file-path validate"
+                  type="text"
+                  placeholder="Upload multiple files"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 20px">
+            <div class="col-md-3">
+              <button
+                class="btn waves-effect waves-light"
+                type="submit"
+                name="action"
+                style="width: 100%"
+              >
+                Submit
+                <i class="material-icons right">cloud</i>
+              </button>
+            </div>
+            <div class="col-md-3">
+              <button
+                class="btn waves-effect waves-light red w-100"
+                (click)="resetForm()"
+                name="action"
+                style="width: 100%"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div style="margin-top: 60px; margin-bottom: 20px"></div>
+      <div class="db-title">
+        <h3>Apartments</h3>
+      </div>
+      <table class="bordered responsive-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>State</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of apartments">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.state }}</td>
+            <td>
+              <a *ngIf="!item.available" href="#" class="db-success unavailable"
+                >CLOSED</a
+              >
+              <a *ngIf="item.available" href="#" class="db-success">OPEN</a>
+            </td>
+            <td>
+              <button
+                *ngIf="!item.available"
+                class="waves-effect waves-light btn mr-2"
+                style="margin-right: 10px"
+                (click)="openApartment(item.id)"
+              >
+                Open
+              </button>
+              <button class="waves-effect waves-light btn red">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 20px; margin-bottom: 20px"></div>
+    </div>
+  </div>
+</section>

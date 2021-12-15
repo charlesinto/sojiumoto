@@ -1,0 +1,59 @@
+<section style="min-height: 100vh">
+  <div class="db-cent-3">
+    <div class="db-cent-table db-com-table">
+      <div class="db-title">
+        <h3>Manage Bookings</h3>
+      </div>
+    </div>
+  </div>
+  <div class="db-cent-3">
+    <div class="db-cent-table db-com-table">
+      <table class="bordered responsive-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Buyer</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Suite Name</th>
+            <th>Sales Rep</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of bookings">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.phoneNumber }}</td>
+            <td>
+              <a
+                *ngIf="!item.suite.available"
+                href="#"
+                class="db-success unavailable"
+                >CLOSED</a
+              >
+              <a *ngIf="item.suite.available" href="#" class="db-success"
+                >OPEN</a
+              >
+            </td>
+            <td>{{ item.suite.name }}</td>
+            <td>
+              {{ item.registeredBy?.firstName }}
+              {{ item.registeredBy?.lastName }}
+            </td>
+            <td *ngIf="item.suite.available">
+              <button
+                (click)="checkOut(item.suite.id)"
+                class="waves-effect waves-light btn"
+              >
+                Close Deal
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

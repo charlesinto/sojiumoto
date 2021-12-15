@@ -1,0 +1,455 @@
+<section>
+  <!--TOP SECTION-->
+  <div class="hp-banner">
+    <img src="{{ data.otherImage1 }}" alt="" />
+  </div>
+  <!--END HOTEL ROOMS-->
+  <!--CHECK AVAILABILITY FORM-->
+  <div class="check-available">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="inn-com-form">
+            <form
+              [formGroup]="bookingForm"
+              (ngSubmit)="createBooking($event)"
+              class="col s12"
+            >
+              <div class="row">
+                <div class="col s12 avail-title">
+                  <h4>Book Apartment</h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col-md-4 s12 m4">
+                  <input
+                    id="name"
+                    formControlName="name"
+                    type="text"
+                    name="name"
+                  />
+                  <label for="name">Name</label>
+                </div>
+                <div class="input-field col-md-4 s12 m4">
+                  <input
+                    id="email"
+                    formControlName="email"
+                    type="text"
+                    name="email"
+                  />
+                  <label for="email">Email</label>
+                </div>
+                <div class="input-field col-md-4 s12 m4">
+                  <input
+                    formControlName="phoneNumber"
+                    type="text"
+                    name="phoneNumber"
+                    id="phoneNumber"
+                  />
+                  <label for="phoneNumber">Phone Number</label>
+                </div>
+                <div class="input-field col-md-4 s12 m4">
+                  <input
+                    type="text"
+                    name="Interest Date"
+                    class="datepicker"
+                    id="checkinDate"
+                    (change)="checkinDateChange($event)"
+                  />
+                  <label for="checkInDate">Interest Date</label>
+                </div>
+                <div class="input-field col-md-4 s12 m4">
+                  <select name="customerCategory" id="customerCategory">
+                    <option value="" disabled selected>
+                      Customer Category
+                    </option>
+                    <option value="OUTRIGHT_SALE">Out Right Sale</option>
+                    <option value="FOLLOWING_UP">Following Up</option>
+                  </select>
+                  <label for="customerCategory" class="active"
+                    >Please choose customer category</label
+                  >
+                </div>
+
+                <!-- <div class="input-field col-md-4 s12 m4">
+                  <input
+                    type="text"
+                    name="checkOutDate"
+                    id="checkOutDate"
+                    class="datepicker"
+                    (change)="checkoutDateChange($event)"
+                  />
+                  <label for="checkOutDate">Checkout Date</label>
+                </div> -->
+                <!-- <div class="input-field col-md-3 s12 m4">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Favorite food</mat-label>
+                    <input matInput placeholder="Ex. Pizza" value="Sushi" />
+                  </mat-form-field>
+                </div> -->
+                <div class="input-field col-md-4 s12 m4">
+                  <input type="submit" value="submit" class="form-btn" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--END CHECK AVAILABILITY FORM-->
+  <div class="hom-com">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="hp-section">
+              <div class="hp-sub-tit">
+                <h4>
+                  <span>{{ data.name }}</span>
+                </h4>
+                <p>
+                  {{ data.shortDescription }}
+                </p>
+              </div>
+              <div class="hp-amini detai-2p">
+                <p>
+                  {{ data.longDescription }}
+                </p>
+              </div>
+            </div>
+            <div class="hp-section">
+              <div class="hp-amini">
+                <ul>
+                  <li>
+                    <img src="./assets/images/icon/a1.png" alt="" /> Elevator in
+                    building
+                  </li>
+                  <li>
+                    <img src="./assets/images/icon/a2.png" alt="" /> Friendly
+                    workspace
+                  </li>
+                  <li>
+                    <img src="./assets/images/icon/a3.png" alt="" /> Instant
+                    Book
+                  </li>
+                  <li>
+                    <img src="./assets/images/icon/a4.png" alt="" /> Wireless
+                    Internet
+                  </li>
+                  <li>
+                    <img src="./assets/images/icon/a5.png" alt="" /> Free
+                    parking on premises
+                  </li>
+                  <li>
+                    <img src="./assets/images/icon/a6.png" alt="" /> Free
+                    parking on street
+                  </li>
+                  <li>
+                    <img src="./assets/images/icon/a7.png" alt="" /> Elevator in
+                    building
+                  </li>
+                  <li>
+                    <img src="./assets/images/icon/a8.png" alt="" /> Friendly
+                    workspace
+                  </li>
+                  <li>
+                    <img src="./assets/images/icon/a9.png" alt="" /> Instant
+                    Book
+                  </li>
+                  <li>
+                    <img src="./assets/images/icon/a10.png" alt="" /> Wireless
+                    Internet
+                  </li>
+                  <li>
+                    <img src="./assets/images/icon/a11.png" alt="" /> Free
+                    parking on premises
+                  </li>
+                  <li>
+                    <img src="./assets/images/icon/a12.png" alt="" /> Free
+                    parking on street
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="hp-section">
+              <div class="hp-over">
+                <ul class="nav nav-tabs hp-over-nav">
+                  <li class="active">
+                    <a data-toggle="tab" href="#menu1"
+                      ><img src="./assets/images/icon/a8.png" alt="" />
+                      <span class="tab-hide">Overview</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#menu2"
+                      ><img src="./assets/images/icon/a10.png" alt="" />
+                      <span class="tab-hide">Facilities</span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div id="home" class="tab-pane fade tab-space">
+                    <div class="res-menu">
+                      <img src="./assets/images/menu/1.jpg" alt="" />
+                      <h3>salted fried chicken <span>$45</span></h3>
+                      <span class="menu-item"
+                        >Tomato soup with croutons, small ceasar salad, apple
+                        juice</span
+                      >
+                    </div>
+                    <div class="res-menu">
+                      <img src="./assets/images/menu/2.jpg" alt="" />
+                      <h3>salted fried chicken <span>$64</span></h3>
+                      <span class="menu-item"
+                        >Tomato soup with croutons, small ceasar salad, apple
+                        juice</span
+                      >
+                    </div>
+                    <div class="res-menu">
+                      <img src="./assets/images/menu/3.jpg" alt="" />
+                      <h3>salted fried chicken <span>$45</span></h3>
+                      <span class="menu-item"
+                        >Tomato soup with croutons, small ceasar salad, apple
+                        juice</span
+                      >
+                    </div>
+                    <div class="res-menu">
+                      <img src="./assets/images/menu/4.jpg" alt="" />
+                      <h3>salted fried chicken <span>$64</span></h3>
+                      <span class="menu-item"
+                        >Tomato soup with croutons, small ceasar salad, apple
+                        juice</span
+                      >
+                    </div>
+                    <div class="res-menu">
+                      <img src="./assets/images/menu/5.jpg" alt="" />
+                      <h3>salted fried chicken <span>$45</span></h3>
+                      <span class="menu-item"
+                        >Tomato soup with croutons, small ceasar salad, apple
+                        juice</span
+                      >
+                    </div>
+                    <div class="res-menu">
+                      <img src="./assets/images/menu/6.jpg" alt="" />
+                      <h3>salted fried chicken <span>$64</span></h3>
+                      <span class="menu-item"
+                        >Tomato soup with croutons, small ceasar salad, apple
+                        juice</span
+                      >
+                    </div>
+                    <div class="res-menu">
+                      <img src="./assets/images/menu/7.jpg" alt="" />
+                      <h3>salted fried chicken <span>$45</span></h3>
+                      <span class="menu-item"
+                        >Tomato soup with croutons, small ceasar salad, apple
+                        juice</span
+                      >
+                    </div>
+                    <div class="res-menu mar-bot-0">
+                      <img src="./assets/images/menu/8.jpg" alt="" />
+                      <h3>salted fried chicken <span>$64</span></h3>
+                      <span class="menu-item"
+                        >Tomato soup with croutons, small ceasar salad, apple
+                        juice</span
+                      >
+                    </div>
+                  </div>
+                  <div id="menu1" class="tab-pane fade in active tab-space">
+                    <div class="hp-main-overview">
+                      <ul>
+                        <li>
+                          Occupancy: <span>{{ data.occupancy }}</span>
+                        </li>
+                        <li>
+                          Size : <span>{{ data.size }}</span>
+                        </li>
+                        <li>
+                          View : <span>{{ data.view }}</span>
+                        </li>
+                        <li>
+                          Room Service : <span>{{ data.roomService }}</span>
+                        </li>
+                        <li>
+                          Terraces : <span>{{ data.terraces }}</span>
+                        </li>
+                        <li>
+                          Free Pickup Facility :
+                          <span *ngIf="data.freePickup">Yes</span
+                          ><span *ngIf="!data.freePickup">No</span>
+                        </li>
+                        <li>
+                          Internet Free
+                          <span *ngIf="data.internetFree">Yes</span
+                          ><span *ngIf="!data.internetFree">No</span>
+                        </li>
+                        <li>
+                          Gym : <span *ngIf="data.gym">Yes</span
+                          ><span *ngIf="!data.gym">No</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="menu2" class="tab-pane fade tab-space">
+                    <div class="row">
+                      <div class="col-md-6 hp-ov-fac">
+                        <img src="./assets/images/hotel/1.jpg" alt="" />
+                      </div>
+                      <div class="col-md-6">
+                        <p>
+                          Maecenas erat lorem, vulputate sed ex at, vehicula
+                          dignissim risus. Nullam non nisi congue elit cursus
+                          tempus. Nunc vel ante nec libero semper maximus. Donec
+                          cursus sed massa eget commodo. Phasellus semper neque
+                          id iaculis malesuada. Nulla efficitur dui vitae orci
+                          blandit tempor. Mauris sed venenatis nibh, sed sodales
+                          risus.
+                        </p>
+                        <p>
+                          Nam sit amet tortor in elit fermentum consectetur et
+                          sit amet eros. Sed varius velit at eros tempor
+                          sodales. Fusce at enim at lectus sollicitudin pharetra
+                          at in risus. Donec ut semper turpis. Maecenas lobortis
+                          ante ut eros scelerisque, at semper augue ullamcorper.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="menu3" class="tab-pane fade tab-space">
+                    <p>
+                      Maecenas erat lorem, vulputate sed ex at, vehicula
+                      dignissim risus. Nullam non nisi congue elit cursus
+                      tempus. Nunc vel ante nec libero semper maximus. Donec
+                      cursus sed massa eget commodo. Phasellus semper neque id
+                      iaculis malesuada. Nulla efficitur dui vitae orci blandit
+                      tempor. Mauris sed venenatis nibh, sed sodales risus.
+                    </p>
+                    <p>
+                      Nam sit amet tortor in elit fermentum consectetur et sit
+                      amet eros. Sed varius velit at eros tempor sodales. Fusce
+                      at enim at lectus sollicitudin pharetra at in risus. Donec
+                      ut semper turpis. Maecenas lobortis ante ut eros
+                      scelerisque, at semper augue ullamcorper.
+                    </p>
+                    <p>
+                      Maecenas erat lorem, vulputate sed ex at, vehicula
+                      dignissim risus. Nullam non nisi congue elit cursus
+                      tempus. Nunc vel ante nec libero semper maximus. Donec
+                      cursus sed massa eget commodo. Phasellus semper neque id
+                      iaculis malesuada. Nulla efficitur dui vitae orci blandit
+                      tempor. Mauris sed venenatis nibh, sed sodales risus.
+                    </p>
+                    <p>
+                      Nam sit amet tortor in elit fermentum consectetur et sit
+                      amet eros. Sed varius velit at eros tempor sodales. Fusce
+                      at enim at lectus sollicitudin pharetra at in risus. Donec
+                      ut semper turpis. Maecenas lobortis ante ut eros
+                      scelerisque, at semper augue ullamcorper.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hp-section">
+              <div class="hp-sub-tit">
+                <h4><span>Photo Gallery</span> Master Suite</h4>
+                <p>
+                  Aliquam id tempor sem. Cras molestie risus et lobortis congue.
+                  Donec id est consectetur, cursus tellus at, mattis lacus.
+                </p>
+              </div>
+              <div class="">
+                <div class="h-gal">
+                  <ul>
+                    <li>
+                      <img
+                        class="materialboxed"
+                        data-caption="Hotel Captions"
+                        src="{{ data.otherImage1 }}"
+                        alt=""
+                      />
+                    </li>
+                    <li>
+                      <img
+                        class="materialboxed"
+                        data-caption="Hotel Captions"
+                        src="{{ data.otherImage2 }}"
+                        alt=""
+                      />
+                    </li>
+                    <li>
+                      <img
+                        class="materialboxed"
+                        data-caption="Hotel Captions"
+                        src="{{ data.otherImage3 }}"
+                        alt=""
+                      />
+                    </li>
+                    <li>
+                      <img
+                        class="materialboxed"
+                        data-caption="Hotel Captions"
+                        src="{{ data.otherImage4 }}"
+                        alt=""
+                      />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!--=========================================-->
+          <div class="hp-call hp-right-com">
+            <div class="hp-call-in">
+              <img src="./assets/images/icon/dbc4.png" alt="" />
+              <h3>
+                <span>Check Availability. Call us!</span>+234 818 500 6891
+              </h3>
+              <small>We are available 24/7 Monday to Sunday</small>
+              <a href="#">Call Now</a>
+            </div>
+          </div>
+          <!--=========================================-->
+          <!--=========================================-->
+          <div class="hp-book hp-right-com">
+            <div class="hp-book-in">
+              <button class="like-button">
+                <i class="fa fa-heart-o"></i> Bookmark this listing
+              </button>
+              <span>159 people bookmarked this place</span>
+              <ul>
+                <li>
+                  <a href="#"><i class="fa fa-facebook"></i> Share</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter"></i> Tweet</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-google-plus"></i> Share</a>
+                </li>
+                <!-- <li><a class="pinterest-share" href="#"><i class="fa fa-pinterest-p"></i> Pin</a></li> -->
+              </ul>
+            </div>
+          </div>
+          <!--=========================================-->
+          <!--=========================================-->
+          <div class="hp-card hp-right-com">
+            <div class="hp-card-in">
+              <h3>We Accept</h3>
+              <span>159 people bookmarked this place</span>
+              <img src="./assets/images/card.png" alt="" />
+            </div>
+          </div>
+          <!--=========================================-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div>
+      <!--TOP SECTION-->
+    </div>
+  </div>
+</section>

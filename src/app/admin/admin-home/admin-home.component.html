@@ -1,0 +1,102 @@
+<section
+  style="
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    overflow-y: scroll;
+    height: 100vh;
+    width: 100%;
+  "
+>
+  <div class="dashboard">
+    <div class="db-left">
+      <div class="db-left-1">
+        <h4>{{ user.firstName }} {{ user.lastName }}</h4>
+        <!-- <p>Newyork, United States</p> -->
+      </div>
+      <div class="db-left-2">
+        <ul>
+          <li>
+            <a
+              [routerLink]="['/admin/dashboard']"
+              routerLinkActive="router-link-active"
+              ><img src="./assets/images/icon/db1.png" alt="" /> All</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/admin/dashboard/manage-boookings']"
+              routerLinkActive="router-link-active"
+              ><img src="./assets/images/icon/db2.png" alt="" />Bookings</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/bookings']"
+              routerLinkActive="router-link-active"
+              ><img src="./assets/images/icon/db3.png" alt="" /> New Booking</a
+            >
+          </li>
+          <li>
+            <a><img src="./assets/images/icon/db4.png" alt="" /> Event</a>
+          </li>
+
+          <li *ngIf="user.role !== 'FRONT DESK OFFICER'">
+            <a
+              [routerLink]="['/admin/dashboard/create-apartment']"
+              routerLinkActive="router-link-active"
+              ><img src="./assets/images/icon/db5.png" alt="" /> Apartments</a
+            >
+          </li>
+          <li *ngIf="user.role !== 'FRONT DESK OFFICER'">
+            <a
+              [routerLink]="['/admin/dashboard/users']"
+              routerLinkActive="router-link-active"
+            >
+              <img src="./assets/images/icon/db7.png" alt="" /> Users</a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./assets/images/icon/db6.png" alt="" /> Payments</a
+            >
+          </li>
+          <li>
+            <a (click)="logout()"
+              ><img src="./assets/images/icon/db8.png" alt="" /> Logout</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="db-cent">
+      <div class="db-cent-1">
+        <p>Hi {{ user.firstName }} {{ user.lastName }},</p>
+        <h4>Welcome to your dashboard</h4>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="db-righ">
+      <h4>Notifications(1)</h4>
+      <ul>
+        <!-- <li>
+          <a href="#!">
+            <img src="./assets/images/icon/dbr1.jpg" alt="" />
+            <h5>Joseph, write a review</h5>
+            <p>All the Lorem Ipsum generators on the</p>
+            <span>2 hours ago</span>
+          </a>
+        </li> -->
+        <li>
+          <a href="#!">
+            <img src="./assets/images/icon/dbr8.jpg" alt="" />
+            <h5>Increase listing viewers</h5>
+            <p>All the Lorem Ipsum generators on the</p>
+            <span>2 days ago</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
